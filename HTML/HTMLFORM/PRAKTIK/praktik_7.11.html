@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element datalist</title>
+</head>
+<body>
+    <from action="/submit" method="post">
+    <label for="browser">Choose your browser from the list:</label>
+    <input type="browser" name="browser" id="browser" />
+    <datalist id="browser">
+        <option value="Chrome">
+        <option value="Firefox">
+        <option value="Safari">
+        <option value="Edge">
+        <option value="Opera">
+    </datalist>
+    <input type="submit" value="submit">
+    </from>
+</body>
+</html>

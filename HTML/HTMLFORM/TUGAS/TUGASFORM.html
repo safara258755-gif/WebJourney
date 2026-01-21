@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUGAS FORM</title>
+    <style>
+        body{
+            margin-left: auto;
+            margin-right: auto;
+            width: 640px;
+        }
+    </style>
+</head>
+<body>
+    <h2>FORMULIR PENDAFTARAN CALON SISWA BARU SMK</h2>
+    
+    <form action="/submit" method="post">
+        
+        <fieldset>
+            <legend>BIODATA SISWA</legend>
+            <table>
+                <tr>
+                    <td>NO. UN SMP/MTS/Sederajat:</td>
+                    <td>
+                        <input type="text" name="nama_lengkap" style="width: 300px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama Lengkap:</td>
+                    <td>
+                        <input type="nama" name="nama" style="width: 300px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>jenis kelamin:</td>
+                    <td>
+                        <input type="radio" name="jk">Laki-Laki <br>
+                        <input type="radio" name="jk">perempuan
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nama orang tua/wali:</td>
+                    <td>
+                        <input type="namaortu" name="namaortu" style="width: 300px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Alamat(seusaiKK/KTP/SuratKet
+                        (Domisilin.6bln Ortu/walimurid
+                        calon siswa):
+                    </td>
+                    <td>
+                        <textarea id="alamat" name="alamat" style="width: 300px;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>kota/kabupaten:</td>
+                    <td>
+                        <input type="kota" name="kota" style="width: 300px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>asal sekolah:</td>
+                    <td>
+                        <input type="sekolah" name="sekolah" style="width: 300px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>agama:</td>
+                    <td>
+                        <select id="agama" name="agama">
+                            <option value="islam">islam</option>
+                            <option value="hindu">hindu</option>
+                            <option value="budha">budha</option>
+                            <option value="kristen">kristen</option>
+                            <option value="katolik">katolik</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>PENILAIAN</legend>
+            <table>
+                <tr>
+                    <td>NILAI UJIAN NASIONAL</td>
+                </tr>
+                <tr>
+                    <td>1.matematika</td>
+                    <td>
+                        <input type="mtk" name="mtk" style="width: 80px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.bahasa indonesia</td>
+                    <td>
+                        <input type="bindo" name="bindo" style="width: 80px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Bahasa inggris</td>
+                    <td>
+                        <input type="bing" name="bing" style="width: 80px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.IPA</td>
+                    <td>
+                        <input type="IPA" name="IPA" style="width: 80px;">
+                    </td>
+                    <td>Jumlah NUN</td>
+                    <td>
+                        <input type="NUN" name="NUN" style="width: 80px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>NILAI BONUS PRESTASI</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="NBP" name="NBP" style="width: 80px;" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>JUMLAH TOTAL NILAI AKHIR PPDB</td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="PPDB" name="PPDB" style="width: 80px;" required>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+<fieldset>
+    <legend>PILIHAN SEKOLAH</legend>
+    <table>
+        <tr>
+            <td>1. SMK</td>
+            <td>
+                <input list="daftar_smk" name="smk1" style="width:300px;">
+                <datalist id="daftar_smk">
+                    <option value="SMKN 1 Kandeman">
+                    <option value="SMKN 1 Batang">
+                    <option value="SMKN 1 Blado">
+                    <option value="SMK Muhammadiyah Batang">
+                    <option value="SMK Ma’arif NU 01 Limpung">
+                </datalist>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;a. Pilihan 1</td>
+            <td>
+                <input list="daftar_jurusan" name="smk1_pilihan1" style="width:300px;">
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;b. Pilihan 2</td>
+            <td>
+                <input list="daftar_jurusan" name="smk1_pilihan2" style="width:300px;">
+            </td>
+        </tr>
+
+        <tr>
+            <td>2. SMK</td>
+            <td>
+                <input list="daftar_smk" name="smk2" style="width:300px;">
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;a. Pilihan 1</td>
+            <td>
+                <input list="daftar_jurusan" name="smk2_pilihan1" style="width:300px;">
+            </td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;b. Pilihan 2</td>
+            <td>
+                <input list="daftar_jurusan" name="smk2_pilihan2" style="width:300px;">
+            </td>
+        </tr>
+    </table>
+
+    <datalist id="daftar_jurusan">
+        <option value="TEI">
+        <option value="RPL">
+        <option value="TBSM">
+        <option value="TAV">
+    </datalist>
+</fieldset>
+
+    </form>
+</body>
+</html>
