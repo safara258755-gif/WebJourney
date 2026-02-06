@@ -1,0 +1,23 @@
+/*STYLES for the external CSS file*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+    
+}
+h1 {
+    color: #00796b;
+    text-align: center;
+    margin-top: 30px;
+}
+h2 {
+    color: #004d40;
+    text-align: center;
+    margin-top: 20px;
+}
+p {
+    color: #555;
+    line-height: 1.8;
+    padding: 0 25px;
+}

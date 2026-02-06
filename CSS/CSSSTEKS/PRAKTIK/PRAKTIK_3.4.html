@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT SPACING</title>
+    <style>
+        h1 {
+            letter-spacing: 2px;
+            word-spacing: 10px;
+        }
+        .small {
+            font-size: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .line-height {
+            line-height: 1.6;
+        }
+        .indent {
+            text-indent: 2em;
+        }
+        .nowrap {
+            white-space: break-spaces;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>conotoh teks spacing</h1>
+        <p class="small">contoh teks dengan ukuran kecil</p>
+        
+        <p class="indent">
+            ini adalah contoh paragraf teks indent. artinya, teks pada baris
+            pertama akan masuk ke dalam sepanjang 2em. panjang 2em sama dengan 2x16px,
+            maka 2em  akan bernilai 32px.
+        </p>
+
+        <p class="line-height">
+            ini adalah paragraf tanpa indent. paragraf normal dengan line height 
+            sebesar 1.6. normalnya line height tiap teks adalah 1. Tapi line height 1
+            sulit dibaca jika ada banyak teks. Line height 1.6 akan membuat teks jadi lebih
+            mudah diibaca, karena spasi atau jarak di antara baris.
+        </p>
+
+        <p class="nowrap">
+            ini contoh paragraf dengan white-space: break-spaces.
+            artinya white space pada pargraf ini, akan mengikuti 
+            spasi yang ditulis di dalam HTML
+        </p>
+</body>
+</html>

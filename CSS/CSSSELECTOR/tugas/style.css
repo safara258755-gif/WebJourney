@@ -1,0 +1,33 @@
+/* Selector Universal */
+* {
+    font-family: Arial, sans-serif;
+    margin: 5px;
+    padding: 5px;
+}
+
+/* Selector Tag */
+p {
+    color: rgb(104, 117, 5);
+    font-size: 16px;
+}
+
+/* Selector Class */
+.kotak {
+    background-color: rgb(175, 243, 40);
+    border: 2px solid rgb(241, 133, 225);
+    padding: 10px;
+    width: 200px;
+}
+
+/* Selector ID */
+#judul {
+    color: rgb(185, 58, 147);
+    text-align: center;
+    font-size: 28px;
+}
+
+#paragraf-khusus {
+    background-color: rgb(249, 157, 201);
+    border-left: 4px solid rgb(230, 114, 201);
+    padding: 8px;
+}
