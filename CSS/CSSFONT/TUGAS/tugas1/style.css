@@ -1,0 +1,41 @@
+/* style-font.css */
+
+/* Paragraf pertama */
+p.p1 {
+    font-size: 16px; /* px */
+    font-weight: normal;
+    font-style: italic;
+    font-family: Arial, sans-serif;
+}
+
+/* Paragraf kedua */
+p.p2 {
+    font-size: 1.2em; /* em */
+    font-weight: bold;
+    font-style: oblique;
+    font-family: "Times New Roman", serif;
+}
+
+/* Paragraf ketiga */
+p.p3 {
+    font-size: 120%; /* % */
+    font-weight: lighter;
+    font-style: normal;
+    font-family: Verdana, sans-serif;
+}
+
+/* Paragraf keempat */
+p.p4 {
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    font-family: "Courier New", monospace;
+}
+
+/* Paragraf kelima */
+p.p5 {
+    font-size: 1.5rem; /* rem */
+    font-weight: bolder;
+    font-style: normal;
+    font-family: Georgia, serif;
+}
