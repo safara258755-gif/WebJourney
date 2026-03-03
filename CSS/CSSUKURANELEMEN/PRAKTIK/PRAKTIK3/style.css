@@ -1,0 +1,15 @@
+body {
+    font-size: 16px;;
+
+}
+.container {
+    width: 50%;
+    background-color: lightgray;
+    padding: 20px;
+}
+.teks-em {
+    font-size: 2em; 
+}
+.teks-rem {
+    font-size: 2rem; 
+}
