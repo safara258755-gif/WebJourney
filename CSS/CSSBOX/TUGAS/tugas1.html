@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan box model</title>
+    <style>
+        body {
+            font-family: cursive;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color:rgb(253, 237, 237);
+        }
+        header {
+            margin-bottom:2em ;
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(240, 117, 174);
+            .profile {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-left: auto;
+                margin-right: auto;
+                border: 6px solid rgb(248, 172, 172);
+            }
+            .profile img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+        article {
+            border: 5px dashed rgb(248, 172, 172);
+            border-radius: 0.8em;
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: white;
+            font-family: cursive;
+        }
+        .action-buttons {
+            margin-top: 1.5em;
+        }
+        .action-buttons button {
+            display: inline;
+            margin-right: 1em;
+            padding: 0.5em 1em;
+            border-radius: 0.08em;
+            border: 1px solid silver;
+        }
+        footer {
+            font-size: small;
+            margin-top: 6em;
+            text-align: center;
+        }
+        .kotak {
+            border: 5px dashed rgb(248, 172, 172);
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: white;
+            font-family: cursive;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>profil saya</h1>
+        <p>mitsuki</p>
+
+        <div class="profile">
+        <img src="march.jpg"  alt="gambarmarch"></div>
+    </header>
+
+    <article>
+        <p>Saya adalah seorang pelajar di SMK Negeri 1 Kandeman. Jurusan saya adalah
+        Pengembangan Perangkat Lunak dan Gim. Saya memiliki hobi coding dan nge
+        Game.
+        </p>
+
+        <div class="action-buttons">
+            <button>&#127800 Like</button>
+            <button>&#127809 comment</button>
+            <button>&#127826 share</button>
+        </div>
+    </article>
+
+    <article>
+        <p>Kompetensi yang sudah saya pelajari di jurusan saya adalah HTML dan CSS.
+        Saya sudah dapat membuat halaman web sederhana dan memahami
+        dasar-dasar pemrograman.
+        </p>
+            <div class="action-buttons">
+            <button>&#127800 Like</button>
+            <button>&#127809 comment</button>
+            <button>&#127826 share</button>
+    </article>
+    
+    <table class="kotak" width="100%" >
+        <tr>
+            <th>skill</th>
+            <th>pengalaman</th>
+            
+        </tr>
+        <td>
+            <ul>
+                <li>HTML(expert)</li>
+                <li>CSS (begginer)</li>
+                <li>java script (beginner)</li>
+            </ul>
+        </td>
+
+        <td>
+            <ul>
+                <li>explored amphoreus</li>
+                <li>explored jarilo-vi</li>
+                <li>explored penacony</li>
+            </ul>
+        </td>
+        
+        </tr>
+    </table>
+
+
+    <footer>
+        <p>copyright &copy; X PPLG 2</p> 
+    </footer>
+</body>
+</html>
