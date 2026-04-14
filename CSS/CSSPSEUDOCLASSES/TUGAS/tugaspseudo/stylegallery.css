@@ -1,0 +1,106 @@
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+    }
+
+    header {
+    background-color: #021A54;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+    background-color: #FF85BB;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
+
+    nav ul li {
+    display: inline;
+    margin: 0 15px;
+    }
+
+    nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    }
+
+    nav ul li.home-link a:hover {
+    opacity: 0.8;
+    }
+
+    .container {
+    padding: 20px;
+    text-align: center;
+    background-color: #FFCEE3;
+    }
+
+    button {
+    background-color: #021A54;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    }
+
+    button:hover {
+    background-color: #033a7d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+    }
+
+    footer {
+    background-color: #FF85BB;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    }
+
+    .products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    }
+
+    .product {
+    background-color: #F5F5F5;
+    border: 1px solid #FFCEE3;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    }
+
+    .product img {
+    max-width: 100%;
+    height: auto;
+    }
+
+    .product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
