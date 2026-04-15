@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contoh css grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        .grid-container {
+            display: grid;
+            gap: 10px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 8px;
+        }
+        /* contoh 1: Grid sederhana 2 kolom */
+        .contoh1 {
+            grid-template-columns: 1fr 1fr;
+        }
+        /* contoh 2: Grid 3 kolom ukuran sama */
+        .contoh2 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        /* contoh 3: Grid dengan lebar kolom berbeda */
+        .contoh3 {
+            grid-template-columns: 2fr 1fr;
+        }
+        /* contoh 4: Grid baris dan kolom */
+        .contoh4 {
+            grid-template-columns:repeat(2, 1fr);
+            grid-template-rows: 100px 150px;
+        }
+        /* contoh 5: grid area */
+        .contoh5 {
+            grid-template-areas: 
+            "header header"
+            "menu konten"
+            "footer footer";
+            grid-template-columns: 150px 1fr;
+            grid-template-rows: auto;
+        }
+        .header {
+            grid-area: header;
+            background-color: #2196F3;
+        }
+        .menu {
+            grid-area: menu;
+            background-color: #673AB7;
+        }
+        .konten {
+            grid-area: konten;
+            background-color: #009688;
+        }
+        .footer {
+            grid-area: footer;
+            background-color: #FF5722;
+        }
+    </style>
+</head>
+<body>
+    <h1>5 contoh pemakaian css grid</h1>
+
+    <!-- contoh 1 -->
+    <h2>contoh 1: grid sederhana 2 kolom</h2>
+    <div class="grid-container contoh1">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+    </div>
+    <!-- contoh 2 -->
+    <h2>contoh 2: grid 3 kolom ukuran sama</h2>
+    <div class="grid-container contoh2">
+        <div class="grid-item">A</div>
+        <div class="grid-item">B</div>
+        <div class="grid-item">C</div>
+        <div class="grid-item">D</div>
+        <div class="grid-item">E</div>
+        
+    </div>
+    <!-- contoh 3 -->
+    <h2>contoh 3: grid dengan lebar kolom berbeda</h2>
+    <div class="grid-container contoh3">
+        <div class="grid-item">kiri lebar</div>
+        <div class="grid-item">kanan sempit</div>
+    </div>
+    <!-- contoh 4 -->
+    <h2>contoh 4: grid baris dan kolom</h2>
+    <div class="grid-container contoh4">
+        <div class="grid-item">atas kiri</div>
+        <div class="grid-item">atas kanan</div>
+        <div class="grid-item">bawah kiri</div>
+        <div class="grid-item">bawah kanan</div>
+    </div>
+    <!-- contoh 5 -->   
+    <h2>contoh 5: layout menggunakan grid area</h2>
+    <div class="grid-container contoh5">
+        <div class="grid-item header">header</div>
+        <div class="grid-item menu">menu</div>
+        <div class="grid-item konten">content</div>
+        <div class="grid-item footer">footer</div>
+    </div>
+</body>
+</html>
