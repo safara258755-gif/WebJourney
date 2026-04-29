@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: myAnimation;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-iteration-count: 3;
+        }
+        @keyframes myAnimation {
+            0% {background-color: red; left: 0px; top: 0px;}
+            25% {background-color: yellow; left: 200px; top: 0px;}
+            50% {background-color: blue; left: 200px; top: 200px;}
+            75% {background-color: green; left: 0px; top: 0px;}
+            100% {background-color: red; left: 0px; top: 0px;}
+        }   
+    </style>
+</head>
+<body>
+    <h1>CSS ANIMATION-DELAY PROPERTY</h1>
+    <div></div>
+    <p>properti animation-iteration-count menentukan berapa kali animasi harus dijalankan.
+        contoh berikut akan menjalankan animasi sebanyak 3 kali sebelum berhenti
+    </p>
+</body>
+</html>
