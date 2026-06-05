@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full bg-cream">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Companion - Jurnal & Catatan Siklus</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                cream: '#FAF6F0',
+                sand: '#F4EBE1',
+                terracotta: '#D48C70',
+                clay: '#C58F7A',
+                sage: '#A3B19B',
+                charcoal: '#2C2A29',
+                dustypink: '#E2B4B4',
+                softrose: '#F0D5D5',
+                // Phase colors
+                menstrual: '#E07A7A',
+                follicular: '#E9C46A',
+                ovulation: '#E76F51',
+                luteal: '#9B7E98',
+              },
+              fontFamily: {
+                serif: ['Lora', 'serif'],
+                sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              }
+            }
+          }
+        }
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300..800&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-full flex flex-col justify-between py-6 px-4 sm:px-6 lg:px-8 font-sans bg-cream text-charcoal">
+
+    <!-- Navigation & Brand Header -->
+    <header class="max-w-6xl mx-auto w-full mb-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between border-b border-sand pb-4 gap-4">
+            <div class="text-center sm:text-left">
+                <a href="home.html" class="font-serif text-2xl font-bold tracking-tight text-charcoal hover:text-clay transition-all duration-300 flex items-center justify-center sm:justify-start gap-2">
+                    <i data-lucide="flower" class="w-6 h-6 text-menstrual"></i>
+                    Cycle Companion
+                </a>
+                <p class="text-xs text-charcoal/60 font-medium">Ruang Kontemplasi & Jurnal Emosional Anda</p>
+            </div>
+            <nav class="flex items-center space-x-4 text-sm font-semibold">
+                <a href="home.html" class="text-clay hover:text-terracotta transition-all duration-300 flex items-center gap-1">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Beranda
+                </a>
+                <span class="text-sand">|</span>
+                <a href="index.html" class="px-4 py-2 bg-white border border-sand hover:border-clay text-charcoal hover:text-clay rounded-xl transition-all duration-300 flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="calendar" class="w-4 h-4 text-charcoal"></i>
+                    Dashboard Kalender
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto w-full flex-grow mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Left Column: Add Note Form (lg:col-span-4) -->
+            <div class="lg:col-span-4">
+                <section class="bg-white border border-sand rounded-3xl p-6 sm:p-8 shadow-sm relative overflow-hidden">
+                    <!-- Leaf design accent overlay -->
+                    <div class="absolute -top-10 -left-10 w-24 h-24 rounded-full bg-softrose/20 blur-xl"></div>
+                    
+                    <h2 class="font-serif text-2xl font-semibold text-charcoal mb-6 border-b border-sand pb-4 relative z-10 flex items-center gap-2">
+                        <i data-lucide="pen-tool" class="w-5 h-5 text-clay"></i>
+                        Tulis Jurnal Harian
+                    </h2>
+                    
+                    <form id="formulir-catatan" class="space-y-5 relative z-10">
+
+                        
+                        <div class="space-y-1.5">
+                            <label for="tanggal-catatan" class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider">
+                                Tanggal Catatan:
+                            </label>
+                            <input type="date" id="tanggal-catatan" required 
+                                   class="w-full px-4 py-3 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all">
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label for="mood-catatan" class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider">
+                                Bagaimana Mood Anda Hari Ini?
+                            </label>
+                            <select id="mood-catatan" required 
+                                    class="w-full px-4 py-3 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all">
+                                <option value="" disabled selected>Pilih emosimu...</option>
+                                <option value="Happy">😊 Senang & Ceria</option>
+                                <option value="Calm">😌 Tenang & Damai</option>
+                                <option value="Energetic">⚡ Berenergi & Produktif</option>
+                                <option value="Tired">😴 Lelah & Butuh Rehat</option>
+                                <option value="Sad">😢 Sedih / Sensitif</option>
+                                <option value="Irritable">😤 Mudah Marah / Kesal</option>
+                                <option value="Anxious">😰 Cemas / Khawatir</option>
+                                <option value="Neutral">😐 Biasa Saja / Netral</option>
+                            </select>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <label for="isi-catatan" class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider">
+                                Tuliskan Pikiran, Gejala, atau Jurnal Tubuh:
+                            </label>
+                            <textarea id="isi-catatan" rows="6" placeholder="Tuliskan keluh kesah, gejala fisik, atau apa saja yang sedang Anda rasakan..." required 
+                                      class="w-full px-4 py-3 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all resize-y"></textarea>
+                        </div>
+
+                        <div class="pt-2 flex gap-3">
+                            <button type="submit" id="tombol-simpan"
+                                    class="flex-grow py-3 bg-clay hover:bg-terracotta text-white rounded-xl font-semibold text-sm shadow-sm transition-all duration-300">
+                                Simpan Jurnal
+                            </button>
+
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <!-- Right Column: Journal History Feed (lg:col-span-8) -->
+            <div class="lg:col-span-8">
+                <section class="bg-white border border-sand rounded-3xl p-6 sm:p-8 shadow-sm">
+                    <div>
+                        <h2 class="font-serif text-2xl font-semibold text-charcoal mb-6 border-b border-sand pb-4 flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-5 h-5 text-clay"></i>
+                            Riwayat Jurnal Anda
+                        </h2>
+                        
+                        <!-- List Container (Managed by JS) -->
+                        <div id="daftar-catatan" class="space-y-4 max-h-[500px] overflow-y-auto pr-1">
+                            <div class="text-center py-12 border border-dashed border-sand/80 rounded-2xl bg-cream/20">
+                                <span class="text-3xl block mb-2">🍃</span>
+                                <p class="text-sm font-medium text-charcoal/50">Belum ada catatan jurnal.</p>
+                                <p class="text-xs text-charcoal/40 mt-1">Mulailah menulis hari pertama Anda untuk melacak polamu!</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-charcoal/40 max-w-md mx-auto pt-6 border-t border-sand/60 w-full">
+        <p>&copy; 2026 Cycle Companion. Dirancang dengan penuh kepedulian untuk kesehatan tubuh alami Anda.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="notes.js"></script>
+</body>
+</html>

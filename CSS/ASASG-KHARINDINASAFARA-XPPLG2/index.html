@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="id" class="h-full bg-cream">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cycle Companion - Dashboard Kalender Siklus</title>
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: "#FAF6F0",
+              sand: "#F4EBE1",
+              terracotta: "#D48C70",
+              clay: "#C58F7A",
+              sage: "#A3B19B",
+              charcoal: "#2C2A29",
+              dustypink: "#E2B4B4",
+              softrose: "#F0D5D5",
+              // Phase colors
+              menstrual: "#E07A7A",
+              follicular: "#E9C46A",
+              ovulation: "#006769",
+              luteal: "#40A578",
+            },
+            fontFamily: {
+              serif: ["Lora", "serif"],
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="min-h-full flex flex-col justify-between py-6 px-4 sm:px-6 lg:px-8 font-sans bg-cream text-charcoal"
+  >
+    <!-- Navigation & Brand Header -->
+    <header class="max-w-6xl mx-auto w-full mb-8">
+      <div
+        class="flex flex-col sm:flex-row items-center justify-between border-b border-sand pb-4 gap-4"
+      >
+        <div class="text-center sm:text-left">
+          <a
+            href="home.html"
+            class="font-serif text-2xl font-bold tracking-tight text-charcoal hover:text-clay transition-all duration-300 flex items-center justify-center sm:justify-start gap-2"
+          >
+            <i data-lucide="flower" class="w-6 h-6 text-menstrual"></i>
+            Cycle Companion
+          </a>
+          <p class="text-xs text-charcoal/60">
+            Dashboard Pemantau Kesehatan & Siklus Tubuh
+          </p>
+        </div>
+        <nav class="flex items-center space-x-4 text-sm font-semibold">
+          <a
+            href="home.html"
+            class="text-clay hover:text-terracotta transition-all duration-300 flex items-center gap-1"
+          >
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Beranda
+          </a>
+          <span class="text-sand">|</span>
+          <a
+            href="notes.html"
+            class="px-4 py-2 bg-white border border-sand hover:border-clay text-charcoal hover:text-clay rounded-xl transition-all duration-300 flex items-center gap-1.5 shadow-sm"
+          >
+            <i data-lucide="book-open" class="w-4 h-4 text-charcoal"></i>
+            Catatan Jurnal
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto w-full flex-grow mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Left Column: Input Form & Today's Info (lg:col-span-4) -->
+        <div class="lg:col-span-4 space-y-6">
+          <!-- Cycle Setup Form Section -->
+          <section
+            class="bg-white border border-sand rounded-3xl p-6 shadow-sm"
+          >
+            <h2
+              class="font-serif text-xl font-semibold text-charcoal mb-4 flex items-center gap-2"
+            >
+              <i data-lucide="settings" class="w-5 h-5 text-clay"></i>
+              Informasi Siklus
+            </h2>
+            <form id="formulir-siklus" class="space-y-4">
+              <div class="space-y-1">
+                <label
+                  for="awal-haid"
+                  class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider"
+                >
+                  Hari Pertama Haid Terakhir:
+                </label>
+                <input
+                  type="date"
+                  id="awal-haid"
+                  required
+                  class="w-full px-3 py-2.5 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all"
+                />
+              </div>
+
+              <div class="space-y-1">
+                <label
+                  for="panjang-siklus"
+                  class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider"
+                >
+                  Panjang Siklus (Hari):
+                </label>
+                <input
+                  type="number"
+                  id="panjang-siklus"
+                  min="21"
+                  max="35"
+                  value="28"
+                  required
+                  class="w-full px-3 py-2.5 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all"
+                />
+              </div>
+
+              <div class="space-y-1">
+                <label
+                  for="lama-haid"
+                  class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider"
+                >
+                  Lama Haid (Hari):
+                </label>
+                <input
+                  type="number"
+                  id="lama-haid"
+                  min="2"
+                  max="10"
+                  value="5"
+                  required
+                  class="w-full px-3 py-2.5 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-2.5 bg-clay hover:bg-terracotta text-white rounded-xl font-semibold text-xs uppercase tracking-wider shadow-sm transition-all duration-300"
+              >
+                Perbarui Kalender
+              </button>
+            </form>
+          </section>
+
+          <!-- Today's Info Panel Section -->
+          <section
+            class="bg-white border border-sand rounded-3xl p-6 shadow-sm relative overflow-hidden"
+          >
+            <!-- Soft organic background circle -->
+            <div
+              class="absolute -bottom-10 -left-10 w-24 h-24 rounded-full bg-sage/10 blur-xl"
+            ></div>
+
+            <h2
+              class="font-serif text-xl font-semibold text-charcoal mb-4 relative z-10 flex items-center gap-2"
+            >
+              <i data-lucide="bar-chart-2" class="w-5 h-5 text-clay"></i>
+              Info Hari Ini
+            </h2>
+            <div class="space-y-3.5 relative z-10">
+              <div
+                class="flex items-center justify-between border-b border-sand pb-2.5"
+              >
+                <span
+                  class="text-xs font-bold text-charcoal/60 uppercase tracking-wider"
+                  >Fase Saat Ini:</span
+                >
+                <span
+                  id="fase-saat-ini"
+                  class="text-sm font-bold text-clay bg-cream px-3 py-1 rounded-full border border-sand/40"
+                  >—</span
+                >
+              </div>
+              <div
+                class="flex items-center justify-between border-b border-sand pb-2.5"
+              >
+                <span
+                  class="text-xs font-bold text-charcoal/60 uppercase tracking-wider"
+                  >Moodmu:</span
+                >
+                <span
+                  id="mood-saat-ini"
+                  class="text-sm font-medium text-charcoal/80"
+                  >—</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-xs font-bold text-charcoal/60 uppercase tracking-wider"
+                  >Haid Berikutnya:</span
+                >
+                <span
+                  id="haid-berikutnya"
+                  class="text-sm font-semibold text-terracotta"
+                  >—</span
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: Calendar (lg:col-span-8) -->
+        <div class="lg:col-span-8">
+          <section
+            class="bg-white border border-sand rounded-3xl p-6 sm:p-8 shadow-sm"
+          >
+            <!-- Calendar Navigation Header -->
+            <div class="flex items-center justify-between mb-6">
+              <button
+                id="tombol-bulan-sebelum"
+                class="px-3.5 py-1.5 text-xs font-semibold bg-cream border border-sand rounded-lg text-charcoal/80 hover:bg-sand hover:text-charcoal transition-all duration-300 flex items-center"
+              >
+                <i data-lucide="chevron-left" class="w-4 h-4 mr-1"></i>
+                Sebelumnya
+              </button>
+              <h2
+                id="bulan-tahun"
+                class="font-serif text-xl sm:text-2xl font-bold text-charcoal"
+              >
+                Januari 2024
+              </h2>
+              <button
+                id="tombol-bulan-berikutnya"
+                class="px-3.5 py-1.5 text-xs font-semibold bg-cream border border-sand rounded-lg text-charcoal/80 hover:bg-sand hover:text-charcoal transition-all duration-300 flex items-center"
+              >
+                Berikutnya
+                <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+              </button>
+            </div>
+
+            <!-- Calendar Grid Container -->
+            <div
+              class="border border-sand/60 rounded-2xl overflow-visible bg-cream/30 p-2 sm:p-4 mb-6"
+            >
+              <!-- Day Headers (Weekdays) -->
+              <div class="grid grid-cols-7 gap-1 sm:gap-2 mb-3">
+                <div class="text-center font-bold text-xs text-menstrual py-1">
+                  Min
+                </div>
+                <div
+                  class="text-center font-bold text-xs text-charcoal/70 py-1"
+                >
+                  Sen
+                </div>
+                <div
+                  class="text-center font-bold text-xs text-charcoal/70 py-1"
+                >
+                  Sel
+                </div>
+                <div
+                  class="text-center font-bold text-xs text-charcoal/70 py-1"
+                >
+                  Rab
+                </div>
+                <div
+                  class="text-center font-bold text-xs text-charcoal/70 py-1"
+                >
+                  Kam
+                </div>
+                <div
+                  class="text-center font-bold text-xs text-charcoal/70 py-1"
+                >
+                  Jum
+                </div>
+                <div
+                  class="text-center font-bold text-xs text-charcoal/70 py-1"
+                >
+                  Sab
+                </div>
+              </div>
+
+              <!-- Dates Grid (Generated by JS) -->
+              <div
+                class="grid grid-cols-7 gap-1 sm:gap-2 text-center"
+                id="daftar-tanggal"
+              >
+                <!-- Dates will be dynamically drawn here by JS (non-circle, rounded-xl) -->
+              </div>
+            </div>
+
+            <!-- Phase Legend -->
+            <div class="border-t border-sand pt-6">
+              <h3
+                class="text-xs font-bold text-charcoal/60 uppercase tracking-widest text-center mb-4"
+              >
+                Legenda Fase Siklus
+              </h3>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Legend Item 1 -->
+                <div
+                  class="flex items-center space-x-3.5 p-2 bg-cream/40 rounded-xl border border-sand/40"
+                >
+                  <div
+                    class="w-5 h-5 rounded-lg bg-menstrual shrink-0 border border-white shadow-sm"
+                  ></div>
+                  <div class="min-w-0">
+                    <p class="text-xs font-bold text-charcoal leading-none">
+                      Menstruasi
+                    </p>
+                    <p class="text-[9px] text-charcoal/50 mt-0.5 leading-none">
+                      Pembersihan / Istirahat
+                    </p>
+                  </div>
+                </div>
+                <!-- Legend Item 2 -->
+                <div
+                  class="flex items-center space-x-3.5 p-2 bg-cream/40 rounded-xl border border-sand/40"
+                >
+                  <div
+                    class="w-5 h-5 rounded-lg bg-follicular shrink-0 border border-white shadow-sm"
+                  ></div>
+                  <div class="min-w-0">
+                    <p class="text-xs font-bold text-charcoal leading-none">
+                      Folikular
+                    </p>
+                    <p class="text-[9px] text-charcoal/50 mt-0.5 leading-none">
+                      Energi Baru / Tumbuh
+                    </p>
+                  </div>
+                </div>
+                <!-- Legend Item 3 -->
+                <div
+                  class="flex items-center space-x-3.5 p-2 bg-cream/40 rounded-xl border border-sand/40"
+                >
+                  <div
+                    class="w-5 h-5 rounded-lg bg-ovulation shrink-0 border border-white shadow-sm"
+                  ></div>
+                  <div class="min-w-0">
+                    <p class="text-xs font-bold text-charcoal leading-none">
+                      Ovulasi
+                    </p>
+                    <p class="text-[9px] text-charcoal/50 mt-0.5 leading-none">
+                      Masa Subur / Bersinar
+                    </p>
+                  </div>
+                </div>
+                <!-- Legend Item 4 -->
+                <div
+                  class="flex items-center space-x-3.5 p-2 bg-cream/40 rounded-xl border border-sand/40"
+                >
+                  <div
+                    class="w-5 h-5 rounded-lg bg-luteal shrink-0 border border-white shadow-sm"
+                  ></div>
+                  <div class="min-w-0">
+                    <p class="text-xs font-bold text-charcoal leading-none">
+                      Luteal
+                    </p>
+                    <p class="text-[9px] text-charcoal/50 mt-0.5 leading-none">
+                      PMS / Refleksi Diri
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mood Trend Chart Section -->
+            <div class="border-t border-sand pt-6 mt-2">
+              <h3 class="text-xs font-bold text-charcoal/60 uppercase tracking-widest text-center mb-4 flex items-center justify-center gap-1.5">
+                <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+                Tren Mood Bulanan
+              </h3>
+              <div id="mood-trend-container">
+                <div class="text-center py-6 text-charcoal/40 text-xs italic">
+                  Belum ada data mood untuk bulan ini.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- ============================================================ -->
+    <!-- MODAL OVERLAY -->
+    <!-- ============================================================ -->
+    <div id="modal-overlay" class="hidden fixed inset-0 bg-charcoal/40 backdrop-blur-sm z-40 transition-opacity duration-200 opacity-0" onclick="tutupModalMood()"></div>
+
+    <!-- ============================================================ -->
+    <!-- MODAL MOOD -->
+    <!-- ============================================================ -->
+    <div id="modal-mood" class="hidden fixed inset-0 z-50 items-center justify-center p-4 opacity-0 scale-95 transition-all duration-200 pointer-events-none">
+      <div class="bg-white border border-sand rounded-3xl p-6 sm:p-8 shadow-xl w-full max-w-md relative overflow-hidden pointer-events-auto" onclick="event.stopPropagation()">
+        <!-- Decorative circles -->
+        <div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-softrose/25 blur-xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-20 h-20 rounded-full bg-sage/15 blur-xl"></div>
+
+        <!-- Close Button -->
+        <button onclick="tutupModalMood()" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-cream border border-sand text-charcoal/60 hover:text-charcoal hover:bg-sand transition-all z-10">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+
+        <div class="relative z-10 space-y-5">
+          <!-- Header -->
+          <div class="space-y-1.5 pr-8">
+            <h3 id="modal-tanggal" class="font-serif text-xl font-bold text-charcoal">Senin, 1 Januari 2024</h3>
+            <p class="text-xs text-charcoal/50">Edit Catatan Harian</p>
+          </div>
+
+          <!-- Mood Select -->
+          <div class="space-y-1.5">
+            <label for="modal-mood-select" class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider">
+              Bagaimana Mood Anda?
+            </label>
+            <select id="modal-mood-select" class="w-full px-4 py-3 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all">
+              <option value="" disabled selected>Pilih mood...</option>
+              <option value="Happy">😊 Senang & Ceria</option>
+              <option value="Calm">😌 Tenang & Damai</option>
+              <option value="Energetic">⚡ Berenergi & Produktif</option>
+              <option value="Tired">😴 Lelah & Butuh Rehat</option>
+              <option value="Sad">😢 Sedih / Sensitif</option>
+              <option value="Irritable">😤 Mudah Marah / Kesal</option>
+              <option value="Anxious">😰 Cemas / Khawatir</option>
+              <option value="Neutral">😐 Biasa Saja / Netral</option>
+            </select>
+          </div>
+
+          <!-- Note Textarea -->
+          <div class="space-y-1.5">
+            <label for="modal-note-text" class="block text-xs font-bold text-charcoal/70 uppercase tracking-wider">
+              Catatan Singkat (Opsional)
+            </label>
+            <textarea id="modal-note-text" rows="3" placeholder="Tuliskan apa yang Anda rasakan..."
+              class="w-full px-4 py-3 bg-cream border border-sand rounded-xl text-charcoal focus:outline-none focus:ring-2 focus:ring-terracotta/40 focus:border-terracotta text-sm transition-all resize-y"></textarea>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex gap-3 pt-1">
+            <button onclick="simpanMoodDariModal()" class="flex-grow py-3 bg-clay hover:bg-terracotta text-white rounded-xl font-semibold text-sm shadow-sm transition-all duration-300 flex items-center justify-center gap-2">
+              <i data-lucide="save" class="w-4 h-4"></i>
+              Simpan Mood
+            </button>
+            <button onclick="tutupModalMood()" class="px-5 py-3 bg-cream border border-sand hover:bg-sand text-charcoal/70 rounded-xl font-semibold text-sm transition-all duration-300">
+              Batal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="text-center text-xs text-charcoal/40 max-w-md mx-auto pt-6 border-t border-sand/60 w-full"
+    >
+      <p>
+        &copy; 2026 Cycle Companion. Dirancang dengan penuh kepedulian untuk
+        kesehatan tubuh alami Anda.
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+  </body>
+</html>

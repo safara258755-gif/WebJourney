@@ -1,0 +1,26 @@
+
+/* Scrollbar bernuansa alami */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #FAF6F0; /* warna cream */
+}
+::-webkit-scrollbar-thumb {
+    background: #EBE3D5; /* warna sand */
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #C58F7A; /* warna clay */
+}
+
+/* Positioning for calendar tooltips */
+.date-cell {
+    position: relative;
+}
+
+#calendar-tooltip {
+    will-change: transform, opacity;
+}
+
